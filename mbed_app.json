@@ -1,0 +1,35 @@
+{
+    "config": {
+        "mqtt-broker-hostname": {
+            "help": "MQTT Broker resolvable hostname",
+            "value": "\"test.mosquitto.org\""
+        },
+        "mqtt-broker-port": {
+            "help": "MQTT Broker port",
+            "value": "1883"
+        },
+        "mqtt-client-id":{
+            "help": "MQTT client name",
+            "value": "\"123_SOME_UNIQUE_NAME_321\""
+        },
+        "mqtt-auth-method":{
+            "help": "use-token-auth",
+            "value": "\"use-token-auth\""
+        },
+        "mqtt-auth-token":{
+            "help": "Authentication Token for the Device ID",
+            "value": "\"AAAAAAAAAAAAAAAAAAA\""
+        }, 
+        "mqtt-topic": {
+            "help": "MQTT topic to publish.",
+            "value": "\"DaniPal_IoT_MQTT\""
+        }
+    },
+    "target_overrides": {
+        "*": {
+            "platform.stdio-convert-newlines": true,
+            "mbed-mqtt.max-connections": "5",
+            "mbed-mqtt.max-packet-size": "1024"
+        }
+    }
+}
